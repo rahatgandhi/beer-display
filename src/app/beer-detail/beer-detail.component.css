@@ -1,0 +1,32 @@
+.jumbotron {
+   min-height: 100vh;
+   margin-bottom: 0rem !important;
+}
+.border-div{
+    border: solid 1px black;
+    padding: 20px;
+}
+ .center {
+   margin-left: auto;
+  margin-right: auto;
+  display: block;
+  } 
+  .custom-div{
+    display: flex;
+    align-items: center;
+  }
+  .table-div{
+   
+    border-bottom: none;
+    padding: 15px 10px;
+  }
+  .table-div:last-child
+{
+   border-bottom: none;
+}
+/* .custom-border-div{
+    height: 1px;
+    background-color: black;
+} */
+  
+  

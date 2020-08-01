@@ -1,0 +1,81 @@
+<div class="jumbotron">
+    <div class="container">
+        <!-- <div *ngIf ="isloading" class ="center">
+            <mat-spinner  mode="indeterminate" ></mat-spinner>
+        </div> -->
+        <div class="col-md-10 offset-md-1 ">
+            <div class="row border-div">
+                <div class="col-md-12">
+                    <h6 style="font-size: 20px;">{{randomData.name}}</h6>
+                </div>
+                <div class="col-md-3">
+                    <div class="d-flex justify-content-between">
+                        <img src="{{randomData.image_url}}" class="mt-3 center " *ngIf="randomData.image_url !=null"
+                            height="200">
+                        <h6 *ngIf="randomData.image_url ==null" class="mt-3 w-100"
+                            style="font-size: 20px;text-align: center;color: #787878;">No Image<br>Available</h6>
+                    </div>
+
+                </div>
+                <div class="col-md-6 d-flex justify-content-between mt-3">
+                    {{randomData.description}}
+                </div>
+                <div class="col-md-3">
+                    <button (click)="getRandomData()" class="btn btn-primary w-100 mt-3  ">Another Beer</button>
+                    <button class="btn btn-primary mt-5 w-100">Random Non-alcholic beer</button>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <h6 class=" w-100 mt-3 mb-2" style="font-size: 24px;">Search</h6>
+                <form [formGroup]="addItemForm" (ngSubmit)="Search()" class="w-100">
+                    <div class="form-row w-100">
+                        <div class="form-group col-4">
+                                <input type="text" placeholder="Search" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                    <div *ngIf="f.name.errors.pattern">  must only contain letters, numbers, hyphens and spaces</div>
+                                </div>
+                        </div>
+                        <div class="form-group col-4 mt-2">
+                            <mat-radio-group class=" " formControlName="type" aria-label="Select an option">
+                                <mat-radio-button value="beer_name">Name &nbsp; &nbsp; &nbsp;</mat-radio-button>
+                                <mat-radio-button value="description">Description</mat-radio-button>
+                            </mat-radio-group>
+                            
+                        </div>
+                        <div class="form-group col-4">
+                        <button class="btn btn-primary" style="float: right;">Search</button>
+                        </div>
+                    </div>
+                    </form>
+                <!-- <div class="col-md-4 p-0">
+                    <input type="text" [(ngModel)] ="param.search" class="form-control w-100" placeholder="Search...">
+                </div>
+                <div class="col-md-4 mt-1">
+                    <mat-radio-group class=" " [(ngModel)] ="param.type"aria-label="Select an option">
+                        <mat-radio-button value="beer_name">Name &nbsp; &nbsp; &nbsp;</mat-radio-button>
+                        <mat-radio-button value="description">Description</mat-radio-button>
+                      </mat-radio-group>
+                </div>
+                <div class="col-md-4 " style="padding-right: 0px;">
+                    <button (click)="Search()" style="float: right;" class="btn btn-primary ">Search</button>
+                </div> -->
+                <h6 class=" w-100 mt-3 mb-2"  *ngIf="showresult"style="font-size: 24px;">Search Result</h6>
+                <h4 class=" w-100 mt-5 mb-2"  *ngIf="searchFilter.length ==0 && showresult "style="font-size: 24px;text-align:center">No Result Found </h4>
+               
+                <div class="row table-div w-100" style="margin: 0px;" *ngFor="let item of searchFilter">
+                    <div class="col-md-2 p-0">  
+                        <img src="{{item.image_url}}" height="70" class="mt-3 center" *ngIf="item.image_url !=null">
+                        <h6 *ngIf="item.image_url ==null" class="mt-3 w-100"
+                            style="font-size: 12px;text-align: center;color: #787878;">No Image<br>Available</h6>
+                    </div>
+                    <div class="col-md-10 p-0">  
+                        <h6 class="w-100" style="font-size: 20px;">{{item.name}}</h6>
+                        {{item.description}}
+                    </div>
+                </div>
+               
+                
+            </div>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,30 @@
+<div class="jumbotron">
+   
+    <div class="container">
+        <div *ngIf="isloading" class="center">
+            <mat-spinner mode="indeterminate"></mat-spinner>
+        </div>
+        <div class="row mb-5">
+
+            <div class="col-md-8 offset-md-2" style="border: 1px solid black;">
+                <div class=" mb-3 mt-3">
+                <i class="fa fa-arrow-left" (click)="goBack()" style="font-size: 24px;cursor: pointer;" title="Go back to list view" aria-hidden="true"></i>
+                <h3 class ="" style="text-align: center;">Details of Inventory</h3>
+            </div>
+                <div class="row ">
+                    <div class="col-md-12  custom-div ">
+                        <label>Name</label>{{model.name}}
+                    </div>
+                    <div class="col-md-12  custom-div ">
+                        <label>Price</label>{{model.price}}
+                    </div>
+
+                    <div class="col-md-12 custom-div ">
+                        <label>Description</label>{{model.description}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
