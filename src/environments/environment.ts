@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseurl:"https://5f1ca2cc39d95a001695397f.mockapi.io/items"
+  baseurl:"https://api.punkapi.com/v2/beers"
 
 };
 

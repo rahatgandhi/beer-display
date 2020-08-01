@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AddItemComponent } from './add-item/add-item.component';
-import { ViewItemComponent } from './view-item/view-item.component';
+import { BeerDetailComponent } from './beer-detail/beer-detail.component';
 const routes: Routes = [
-  { path: '', component: AddItemComponent },
-  { path: 'view-item/:id', component: ViewItemComponent }
+  { path: '', component: BeerDetailComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
